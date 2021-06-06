@@ -7,7 +7,6 @@ namespace RoleplayGame
     /* 
     • La clase Dwarf cumple con el patron Expert ya que:
     - Es la clase experta en conocer el daño total de las instancias de la clase Dwarf
-      y tambien tiene las responsabilidades de ejecutar un ataque y de recibir un ataque.
      
     • La clase Dwarf cumple con el principio SRP ya que su única razón de cambio sería
        cambiar algún atributo al momento de construir instancias de la clase.
