@@ -17,6 +17,15 @@ namespace RoleplayGame
 
         public int Protection{get; private set;}
 
+        private bool isMagic = true;
+        public bool IsMagic 
+        {
+            get
+            {
+                return isMagic;
+            }
+        }
+
         public string Description{get; private set;}
         
         public List<Spell> spells;
@@ -32,12 +41,12 @@ namespace RoleplayGame
         public void AddSpell(Spell spell)
         {
             this.spells.Add(spell);
-            UpdateBookSpellDamage();
-            UpdateBookSpellProtection();
+            UpdateSpellBookDamage();
+            UpdateSpellBookProtection();
             
         }
 
-        private void UpdateBookSpellDamage()
+        private void UpdateSpellBookDamage()
         {
             int totalDamage = 0;
             foreach(Spell spell in spells)
@@ -48,7 +57,7 @@ namespace RoleplayGame
             this.Damage = totalDamage;
         }
 
-        private void UpdateBookSpellProtection()
+        private void UpdateSpellBookProtection()
         {
             int totalProtection = 0;
             foreach(Spell spell in spells)
