@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-     public interface IAttackItem : INormalItem
+     public interface IMagicItem : IItem
      {
-        public int Damage{get; }
+          
      }
 }
