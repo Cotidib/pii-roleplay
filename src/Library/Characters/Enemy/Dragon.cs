@@ -4,14 +4,13 @@ using System.Collections.Generic;
 namespace RoleplayGame
 {
     /* 
-    • La clase Dwarf cumple con el patron Expert ya que:
-    - Es la clase experta en conocer el daño total de las instancias de la clase Dwarf
-      y tambien tiene las responsabilidades de ejecutar un ataque y de recibir un ataque.
+    • La clase Dragon cumple con el patron Expert ya que:
+    - Es la clase experta en conocer el daño total de las instancias de la clase Dragon
      
-    • La clase Dwarf cumple con el principio SRP ya que su única razón de cambio sería
+    • La clase Dragon cumple con el principio SRP ya que su única razón de cambio sería
        cambiar algún atributo al momento de construir instancias de la clase.
     
-    • Como es un personaje de tipo NormalCharacter, puedo usar cualquier item subtipo de 
+    • Como es un personaje de tipo NormalEnemyCharacter, puede usar cualquier item subtipo de 
       INormalItem por el principio de sustitucion. */
 
     public class Dragon: NormalEnemyCharacter
