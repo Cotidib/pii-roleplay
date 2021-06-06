@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-     public interface IMagicItem : IItem
+     public interface INormalItem : IItem
      {
-          
+          bool IsMagic {get;}
      }
 }

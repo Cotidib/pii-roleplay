@@ -12,9 +12,19 @@ namespace RoleplayGame
 
         public int Damage{get; private set;}
 
+        private bool isMagic = true;
+        public bool IsMagic 
+        {
+            get
+            {
+                return isMagic;
+            }
+        }
+
         public string Description{get; private set;}
 
-        public MagicStaff(string name, int damage, string description)
+
+          public MagicStaff(string name, int damage, string description)
         {
             this.Name = name;
             this.Damage = damage;
