@@ -28,6 +28,7 @@ namespace RoleplayGame
             this.Damage = 0;
             this.Inventary = new List<IItem>();
             this.SpellBook = spellBook;
+            this.obtainedVP = 0;
         }
 
         public override int TotalDamage()

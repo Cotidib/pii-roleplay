@@ -16,7 +16,6 @@ namespace RoleplayGame
 
         public abstract int TotalDamage();
         public abstract int TotalProtection();
-        public abstract void Attack(Character character);
         public abstract void RecieveAttack(int damage);
         
 

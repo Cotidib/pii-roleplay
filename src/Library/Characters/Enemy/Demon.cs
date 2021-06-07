@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace RoleplayGame
 {
     /*
-    •La clase Wizard cumple con el patron Expert ya que:
+    •La clase Demon cumple con el patron Expert ya que:
     - Es la clase experta en conocer la información necesaria para crear instancias de Demon
      
     •La clase Demon cumple con el principio SRP ya que no tiene más de una razón de cambio 
@@ -21,6 +21,7 @@ namespace RoleplayGame
             this.Health = initialHealth;
             this.Role = role;
             this.Inventary = new List<IItem>();
+            this.vP = 2;
          
         }
 
