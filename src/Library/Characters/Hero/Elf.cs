@@ -5,18 +5,18 @@ using System.Collections.Generic;
 namespace RoleplayGame
 {
     /* 
-    • La clase Dwarf cumple con el patron Expert ya que:
-    - Es la clase experta en conocer el daño total de las instancias de la clase Dwarf
+    • La clase Elf cumple con el patron Expert ya que:
+    - Es la clase experta en conocer el daño total de las instancias de la clase Elf
      
-    • La clase Dwarf cumple con el principio SRP ya que su única razón de cambio sería
+    • La clase Elf cumple con el principio SRP ya que su única razón de cambio sería
        cambiar algún atributo al momento de construir instancias de la clase.
     
     • Al ser un personaje del tipo NormalCharacter, puede usar cualquier item subtipo de 
     INormalItem por el principio de sustitucion. */
 
-    public class Dwarf : NormalCharacter
+    public class Elf : NormalCharacter
     {
-        public Dwarf(string name, int damage, string role)
+        public Elf(string name, int damage, string role)
         {
             this.Name = name;
             this.Damage = damage;

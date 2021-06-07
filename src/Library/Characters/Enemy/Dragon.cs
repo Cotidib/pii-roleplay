@@ -24,6 +24,7 @@ namespace RoleplayGame
             this.Health = initialHealth;
             this.Role = role;
             this.Inventary = new List<INormalItem>();
+            this.vP = 2;
         }
     }
 }

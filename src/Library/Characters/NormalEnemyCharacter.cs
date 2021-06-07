@@ -56,7 +56,7 @@ namespace RoleplayGame
             return totalProtection;
         }
 
-        public override void Attack(Character character)
+        public override void Attack(Hero character)
         {
             if(character.Health > 0)
             {

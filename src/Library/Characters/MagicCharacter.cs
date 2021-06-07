@@ -62,7 +62,7 @@ namespace RoleplayGame
             return totalProtection;
         } 
 
-        public override void Attack(Character character)
+        public override void Attack(Enemy character)
         {
             if(character.Health > 0)
             {
@@ -72,6 +72,7 @@ namespace RoleplayGame
                 if(character.Health <= 0)
                 {
                     Console.WriteLine($" {character.Name} fue asesinado 💔");
+                    this.obtainedVP += character.vP;
                 }
                 else
                 {
