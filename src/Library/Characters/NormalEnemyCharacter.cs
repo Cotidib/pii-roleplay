@@ -81,16 +81,15 @@ namespace RoleplayGame
 
         public override void RecieveAttack(int damage)
         {
-                if(damage <= (this.Health + this.TotalProtection()))
-                {
-                    this.Health -= (damage - TotalProtection());
-                }
-                else
-                {
-                    this.Health = 0;
-                }
+            if(damage <= (this.Health + this.TotalProtection()))
+            {
+                this.Health -= (damage - TotalProtection());
             }
-
+            else
+            {
+                this.Health = 0;
+            }
+        }
     }
     
 }

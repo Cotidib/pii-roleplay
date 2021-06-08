@@ -20,11 +20,11 @@ namespace RoleplayGame
         {
             this.Name = name;
             this.Damage = damage;            
-            this.initialHealth = 300;
+            this.initialHealth = 400;
             this.Health = initialHealth;
             this.Role = role;
             this.Inventary = new List<INormalItem>();
-            this.vP = 2;
+            this.vP = 5;
         }
     }
 }

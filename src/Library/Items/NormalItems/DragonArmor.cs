@@ -10,7 +10,7 @@ namespace RoleplayGame
     
     Cumple con el principio SRP ya que no hay más de una razón de cambio.*/
 
-    public class Shield : IProtectionItem
+    public class DragonArmor : IProtectionItem
     {
         public string Name{get; private set;}
 
@@ -28,7 +28,7 @@ namespace RoleplayGame
             }
         }
 
-        public Shield(string name, int protection, string description)
+        public DragonArmor(string name, int protection, string description)
         {
             this.Name = name;
             this.Protection = protection;
