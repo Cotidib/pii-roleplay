@@ -17,13 +17,6 @@ namespace RoleplayGame
         public abstract int TotalDamage();
         public abstract int TotalProtection();
         public abstract void RecieveAttack(int damage);
-        
-
-        public void HealCharacter(Character character)
-        {
-            character.Heal();
-            Console.WriteLine($"{character.Name} ahora tiene {character.Health} de vida ❤");
-        }
 
         public void Heal()
         {   

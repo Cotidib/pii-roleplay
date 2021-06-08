@@ -9,7 +9,7 @@ namespace RoleplayGame
 
      Cumple con el principio SRP ya que no hay más de una razón de cambio.*/
 
-    public class Axe : IAttackItem
+    public class SteelClaws : IAttackItem
     {
         public string Name{get; private set;}
 
@@ -27,7 +27,7 @@ namespace RoleplayGame
             }
         }
         
-        public Axe(string name, int damage, string description)
+        public SteelClaws(string name, int damage, string description)
         {
             this.Name = name;
             this.Damage = damage;

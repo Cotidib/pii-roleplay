@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    /*La clase Warhammer cumple con el patron Expert ya que es la clase experta 
-    en conocer la información necesaria para crear una instancia de Warhammer.
+    /*La clase Warhammer implementa la interfaz IAttackItem y cumple con el patron Expert, 
+    ya que es la clase experta en conocer la información necesaria para crear una instancia de Warhammer.
     
     Cumple con el principio SRP ya que no hay más de una razón de cambio.*/
 
