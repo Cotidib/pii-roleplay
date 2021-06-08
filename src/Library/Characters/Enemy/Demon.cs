@@ -14,11 +14,12 @@ namespace RoleplayGame
 
     public class Demon : MagicEnemyCharacter
     {
-        public Demon(string name, string role)
+        public Demon(string name, int damage, string role)
         {
             this.Name = name;
             this.initialHealth = 100;
             this.Health = initialHealth;
+            this.Damage = damage;
             this.Role = role;
             this.Inventary = new List<IItem>();
             this.vP = 2;
