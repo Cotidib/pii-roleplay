@@ -17,7 +17,7 @@ namespace Test.Library
         [Test]
         public void BowCorrectlyInstanced()
         //Se prueba que el arco se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(bow);
         }
@@ -25,11 +25,11 @@ namespace Test.Library
         [Test]
         public void AttackValueCheck()
         //Se prueba que el valor del ataque del arco sea el esperado.
-        {   
+        {
             int expectedAttackValue = 75;
 
             //Assert
-            Assert.AreEqual(expectedAttackValue,bow.Damage);
+            Assert.AreEqual(expectedAttackValue, bow.Damage);
         }
 
         [Test]

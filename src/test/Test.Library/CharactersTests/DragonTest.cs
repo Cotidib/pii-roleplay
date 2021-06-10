@@ -22,27 +22,27 @@ namespace Test.Library
             steelClaws = new SteelClaws("Garras de juicio", 50, "Corte devastador");
             dragonArmor = new DragonArmor("Armadura alada", 70, "Blindaje total");
             dragon = new Dragon("Smaug", 70, "Tanque");
-            
+
             orc = new Orc("Azog", 40, "Tanque");
 
-            axe = new Axe("Executioner",50, "Corte decisivo");
+            axe = new Axe("Executioner", 50, "Corte decisivo");
             warhammer = new Warhammer("Mjölnir", 60, "Ultimatum");
-            dwarf = new Dwarf("Thorin", 70, "Luchador"); 
+            dwarf = new Dwarf("Thorin", 70, "Luchador");
 
         }
 
         [Test]
         public void NameAndRoleCannotBeNull()
         //Se prueba que el nombre y el rol del dragón que no sea nulo
-        {   
+        {
             //Assert
-            Assert.IsTrue(dragon.Name!=null && dragon.Role!=null);
+            Assert.IsTrue(dragon.Name != null && dragon.Role != null);
         }
 
         [Test]
         public void DragonCorrectlyInstanced()
         //Se prueba que enano se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(dragon);
         }
@@ -52,7 +52,7 @@ namespace Test.Library
         //Se prueba que las garras de acero se hayan agregado al inventario del dragón.
         {   //Act
             dragon.Equip(steelClaws);
-            
+
             //Assert
             Assert.IsNotNull(dragon.Inventary);
         }
@@ -60,20 +60,20 @@ namespace Test.Library
         [Test]
         public void EquipTwoItemsCheck()
         //Se prueba que los dos items se agreguen correctamente al inventario del dragón.
-        {   
+        {
             //Act
             dragon.Equip(steelClaws);
             dragon.Equip(dragonArmor);
             int index = dragon.Inventary.IndexOf(dragonArmor);
 
             //Assert
-            Assert.AreEqual(1,index);
+            Assert.AreEqual(1, index);
         }
 
         [Test]
         public void RemoveItemCheck()
         //Se prueba que el item que se añada al inventario del dragón sea removido correctamente.
-        {   
+        {
             //Act
             dragon.Equip(dragonArmor);
             dragon.UnEquip(dragonArmor);
@@ -85,7 +85,7 @@ namespace Test.Library
         [Test]
         public void TotalDamageCheck()
         //Se prueba que el valor total del daño del dragón sea el esperado.
-        {   
+        {
             //Act
             dragon.Equip(steelClaws);
             int expectedTotalDamage = 70 + 50;
@@ -114,7 +114,7 @@ namespace Test.Library
         public void CheckHeroHealthAfterBeingAttacked()
         /*Se prueba que el valor total de la vida del héroe atacado sea 
         el esperado despues de recibir un ataque por el dragón.*/
-        {  
+        {
             //Act
             dragon.Equip(steelClaws);
             dragon.Equip(dragonArmor);
@@ -122,23 +122,23 @@ namespace Test.Library
 
             //Assert
             Assert.AreEqual(0, dwarf.Health);
-        } 
+        }
 
         [Test]
         public void ReceiveAttackCheck()
         /*Se prueba que el valor total de la vida (más su protección) del dragón 
         sea el esperado despues de recibir un daño ataque en especifico.*/
-        {   
+        {
             //Act
-            int expectedDragonHealth = 270;
+            int expectedDragonHealth = 70;
             dragon.Equip(dragonArmor);
             dragon.RecieveAttack(200);
-        
+
             //Assert
             Assert.AreEqual(expectedDragonHealth, dragon.Health);
         }
 
-       [Test]
+        [Test]
         public void HealOrcCheck()
         // Se comprueba que el el método para curar a un orco del dragón funcione correctamente. //
 
@@ -159,7 +159,7 @@ namespace Test.Library
             dragon.Equip(dragonArmor);
             dragon.Equip(axe);
             dragon.Equip(warhammer);
-            Assert.AreEqual(4, dragon.Inventary.Count); 
+            Assert.AreEqual(4, dragon.Inventary.Count);
         }
     }
 }

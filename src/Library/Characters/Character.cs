@@ -5,13 +5,13 @@ using System.Collections.Generic;
 namespace RoleplayGame
 {
 
-    public abstract class Character 
+    public abstract class Character
     {
-        public string Name{get; protected set;}
-        public int Damage{get; protected set;}
-        public int Health{get; protected set;}
-        public string Role{get; protected set;}
-        
+        public string Name { get; protected set; }
+        public int Damage { get; protected set; }
+        public int Health { get; protected set; }
+        public string Role { get; protected set; }
+
         protected int initialHealth;
 
         public abstract int TotalDamage();
@@ -19,8 +19,8 @@ namespace RoleplayGame
         public abstract void RecieveAttack(int damage);
 
         public void Heal()
-        {   
-            if(this.Health > 0)
+        {
+            if (this.Health > 0)
             {
                 this.Health = this.initialHealth;
             }
@@ -30,7 +30,7 @@ namespace RoleplayGame
 
         public void Respawn()
         {
-            if(this.Health <= 0)
+            if (this.Health <= 0)
             {
                 this.Health = initialHealth;
             }
@@ -40,7 +40,7 @@ namespace RoleplayGame
             }
         }
 
-        
+
     }
-    
+
 }

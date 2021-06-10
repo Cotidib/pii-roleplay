@@ -16,7 +16,7 @@ namespace Test.Library
         [Test]
         public void CloakCorrectlyInstanced()
         //Se prueba que la capa se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(cloak);
         }
@@ -24,11 +24,11 @@ namespace Test.Library
         [Test]
         public void DefenseValueCheck()
         //Se prueba que el valor de la defensa de la capa sea el esperado.
-        {   
+        {
             int expectedDefenseValue = 85;
 
             //Assert
-            Assert.AreEqual(expectedDefenseValue,cloak.Protection);
+            Assert.AreEqual(expectedDefenseValue, cloak.Protection);
         }
 
         [Test]

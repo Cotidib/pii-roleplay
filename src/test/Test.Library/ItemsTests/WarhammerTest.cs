@@ -16,7 +16,7 @@ namespace Test.Library
         [Test]
         public void AxeCorrectlyInstanced()
         //Se prueba que el martillo de guerra se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(warhammer);
         }
@@ -24,7 +24,7 @@ namespace Test.Library
         [Test]
         public void AttackValueCheck()
         //Se prueba que el valor del ataque del martillo sea el esperado.
-        {  
+        {
             //Act
             int expectedAttackValue = 70;
 

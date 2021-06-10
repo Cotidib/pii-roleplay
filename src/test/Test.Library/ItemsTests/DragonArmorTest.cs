@@ -16,7 +16,7 @@ namespace Test.Library
         [Test]
         public void DragonArmorCorrectlyInstanced()
         //Se prueba que la armadura del dragón se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(dragonArmor);
         }
@@ -24,7 +24,7 @@ namespace Test.Library
         [Test]
         public void DefenseValueCheck()
         //Se prueba que el valor de la defensa de la armadura sea el esperado.
-        {   
+        {
             int expectedDefenseValue = 70;
 
             //Assert

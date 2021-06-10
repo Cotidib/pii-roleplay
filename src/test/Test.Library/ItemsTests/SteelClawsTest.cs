@@ -16,7 +16,7 @@ namespace Test.Library
         [Test]
         public void SteelClawsCorrectlyInstanced()
         //Se prueba que las garras de acero se instanciaron correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(steelClaws);
         }
@@ -24,7 +24,7 @@ namespace Test.Library
         [Test]
         public void AttackValueCheck()
         //Se prueba que el valor del ataque de las garras sea el esperado.
-        {  
+        {
             //Act
             int expectedAttackValue = 50;
 

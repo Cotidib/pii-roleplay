@@ -12,9 +12,9 @@ namespace Test.Library
         [SetUp]
         public void SetUp()
         {
-            
-            spell = new FireSpell("Accio", "Atrae un objeto",10,20);
-            
+
+            spell = new FireSpell("Accio", "Atrae un objeto", 10, 20);
+
         }
 
 

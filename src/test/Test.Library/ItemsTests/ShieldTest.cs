@@ -16,7 +16,7 @@ namespace Test.Library
         [Test]
         public void GoldenShieldCorrectlyInstanced()
         //Se prueba que el escudo se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(shield);
         }
@@ -24,11 +24,11 @@ namespace Test.Library
         [Test]
         public void DefenseValueCheck()
         //Se prueba que el valor de la defensa del escudo sea el esperado.
-        {   
+        {
             int expectedDefenseValue = 25;
 
             //Assert
-            Assert.AreEqual(expectedDefenseValue,shield.Protection);
+            Assert.AreEqual(expectedDefenseValue, shield.Protection);
         }
 
         [Test]

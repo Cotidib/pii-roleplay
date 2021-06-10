@@ -13,14 +13,14 @@ namespace RoleplayGame
     • Como es un personaje de tipo NormalEnemyCharacter, puede usar cualquier item subtipo de 
       INormalItem por el principio de sustitucion. */
 
-    public class Dragon: NormalEnemyCharacter
+    public class Dragon : NormalEnemyCharacter
     {
 
         public Dragon(string name, int damage, string role)
         {
             this.Name = name;
-            this.Damage = damage;            
-            this.initialHealth = 400;
+            this.Damage = damage;
+            this.initialHealth = 200;
             this.Health = initialHealth;
             this.Role = role;
             this.Inventary = new List<INormalItem>();
