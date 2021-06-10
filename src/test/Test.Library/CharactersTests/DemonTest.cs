@@ -13,7 +13,7 @@ namespace Test.Library
 
         private Demon demon;
         private Sword sword;
-        private MagicStaff blackMagicStaff;       
+        private MagicStaff blackMagicStaff;
 
         [SetUp]
         public void SetUp()
@@ -22,13 +22,13 @@ namespace Test.Library
             magicStaff = new MagicStaff("Varita", 10, "Hace hechizos");
             spellBook = new SpellBook("Libro", "Tiene hechizos");
             spell = new FireSpell("Wingardium Leviosa", "Hace levitar objetos", 10, 10);
-            wizard = new Wizard("Hermione", "Mago",spellBook);
+            wizard = new Wizard("Hermione", "Mago", spellBook);
             wizard.Equip(magicStaff);
-            
+
             demon = new Demon("Demon", 0, "Asesino");
-            sword = new Sword ("Espada corta", 50, "Corte Fugaz");
-            blackMagicStaff = new MagicStaff("Varita", 10, "Invoca magia negra");         
-             
+            sword = new Sword("Espada corta", 50, "Corte Fugaz");
+            blackMagicStaff = new MagicStaff("Varita", 10, "Invoca magia negra");
+
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace Test.Library
             //Assert
             Assert.AreEqual(50, wizard.Health);
 
-        } 
+        }
 
         [Test]
         public void ReceiveAttackTest()
@@ -82,7 +82,7 @@ namespace Test.Library
             demon.RecieveAttack(40);
             //Assert
             Assert.AreEqual(60, demon.Health);
-        } 
+        }
 
         [Test]
         public void CorrectTotalDamageCalculation()
@@ -136,7 +136,7 @@ namespace Test.Library
             demon.Equip(sword);
             //Assert
             Assert.AreEqual(2, demon.Inventary.Count);
-        } 
+        }
 
     }
 }

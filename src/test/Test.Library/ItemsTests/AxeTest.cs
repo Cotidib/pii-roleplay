@@ -16,7 +16,7 @@ namespace Test.Library
         [Test]
         public void AxeCorrectlyInstanced()
         //Se prueba que el hacha se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(axe);
         }
@@ -24,7 +24,7 @@ namespace Test.Library
         [Test]
         public void AttackValueCheck()
         //Se prueba que el valor del ataque del hacha sea el esperado.
-        {  
+        {
             //Act
             int expectedAttackValue = 50;
 

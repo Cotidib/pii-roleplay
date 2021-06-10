@@ -17,7 +17,7 @@ namespace RoleplayGame
 
     public class Wizard : MagicCharacter
     {
-        public SpellBook SpellBook {get; private set;}
+        public SpellBook SpellBook { get; private set; }
 
         public Wizard(string name, string role, SpellBook spellBook)
         {
@@ -34,13 +34,13 @@ namespace RoleplayGame
         public override int TotalDamage()
         {
             int totalDamage = 0;
-            foreach(IItem item in this.Inventary)
+            foreach (IItem item in this.Inventary)
             {
-                if(typeof(IAttackItem).IsInstanceOfType(item))
+                if (typeof(IAttackItem).IsInstanceOfType(item))
                 {
                     totalDamage += ((IAttackItem)item).Damage;
                 }
-                else if(typeof(IMagicAttackItem).IsInstanceOfType(item))
+                else if (typeof(IMagicAttackItem).IsInstanceOfType(item))
                 {
                     totalDamage += ((IMagicAttackItem)item).Damage;
                 }
@@ -51,19 +51,19 @@ namespace RoleplayGame
         public override int TotalProtection()
         {
             int totalProtection = 0;
-            foreach(IItem item in this.Inventary)
+            foreach (IItem item in this.Inventary)
             {
-                if(typeof(IProtectionItem).IsInstanceOfType(item))
+                if (typeof(IProtectionItem).IsInstanceOfType(item))
                 {
                     totalProtection += ((IProtectionItem)item).Protection;
                 }
-                else if(typeof(IMagicProtectionItem).IsInstanceOfType(item))
+                else if (typeof(IMagicProtectionItem).IsInstanceOfType(item))
                 {
                     totalProtection += ((IMagicProtectionItem)item).Protection;
                 }
             }
             return totalProtection + this.SpellBook.Protection;
-        } 
+        }
 
         public void LearnSpell(Spell spell)
         {

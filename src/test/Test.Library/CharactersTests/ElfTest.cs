@@ -21,30 +21,30 @@ namespace Test.Library
             //Arrange
             bow = new Bow("Arco gigante", 75, "Tira fuego");
             cloak = new Cloak("Capa maxima", 80, "Agilidad");
-            elf = new Elf("Frank",15, "Escurridizo");
+            elf = new Elf("Frank", 15, "Escurridizo");
 
             sword = new Sword("Espadon", 50, "Corte Fugaz");
             shield = new Shield("Escudo Dorado", 30, "Escudazo");
             orc = new Orc("Thor", 25, "Tanque");
 
-            axe = new Axe("Executioner",50, "Corte decisivo");
+            axe = new Axe("Executioner", 50, "Corte decisivo");
             warhammer = new Warhammer("Mjölnir", 60, "Ultimatum");
-            dwarf = new Dwarf("Thorin", 70, "Luchador"); 
+            dwarf = new Dwarf("Thorin", 70, "Luchador");
 
         }
 
         [Test]
         public void NameAndRoleCannotBeNull()
         //Se prueba que el nombre y el rol del elfo que no sea nulo
-        {   
+        {
             //Assert
-            Assert.IsTrue(elf.Name!=null && elf.Role!=null);
+            Assert.IsTrue(elf.Name != null && elf.Role != null);
         }
 
         [Test]
         public void ElfCorrectlyInstanced()
         //Se prueba que elfo se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(elf);
         }
@@ -54,7 +54,7 @@ namespace Test.Library
         //Se prueba que el hacha se haya agregado al inventario del elfo.
         {   //Act
             elf.Equip(bow);
-            
+
             //Assert
             Assert.IsNotNull(elf.Inventary);
         }
@@ -62,20 +62,20 @@ namespace Test.Library
         [Test]
         public void EquipTwoItemsCheck()
         //Se prueba que los dos items se agreguen correctamente al inventario del elfo.
-        {   
+        {
             //Act
             elf.Equip(bow);
             elf.Equip(cloak);
             int index = elf.Inventary.IndexOf(cloak);
 
             //Assert
-            Assert.AreEqual(1,index);
+            Assert.AreEqual(1, index);
         }
 
         [Test]
         public void RemoveItemCheck()
         //Se prueba que el item que se añada al inventario del elfo sea removido correctamente.
-        {   
+        {
             //Act
             elf.Equip(bow);
             elf.UnEquip(bow);
@@ -87,7 +87,7 @@ namespace Test.Library
         [Test]
         public void TotalDamageCheck()
         //Se prueba que el valor total del damage del elfo sea el esperado.
-        {   
+        {
             //Act
             elf.Equip(bow);
             int expectedTotalDamage = 75 + 15;
@@ -115,7 +115,7 @@ namespace Test.Library
         public void CheckHeroHealthAfterBeingAttacked()
         /*Se prueba que el valor total de la vida del enemigo sea el esperado después 
         de recibir un ataque por el elfo.*/
-        {  
+        {
             //Act
             int expectedHealthLeftEnemy = 230 - 90;
             orc.Equip(shield);
@@ -125,23 +125,23 @@ namespace Test.Library
 
             //Assert
             Assert.AreEqual(expectedHealthLeftEnemy, orc.Health);
-        } 
+        }
 
         [Test]
         public void ReceiveAttackCheck()
         /*Se prueba que el valor total de la vida (con su protección) del elfo sea 
         el esperado despues de recibir un daño ataque en especifico.*/
-        {   
+        {
             //Act
             int expectedElfHealth = 100 - 25;
             orc.Equip(sword);
             elf.RecieveAttack(25);
-        
+
             //Assert
             Assert.AreEqual(expectedElfHealth, elf.Health);
         }
 
-       [Test]
+        [Test]
         public void HealAllyCheck()
         // Se comprueba que el el método para curar a un aliado del elfo funcione correctamente. //
 
@@ -159,7 +159,46 @@ namespace Test.Library
         // Se verifica que se añadan items al inventario del enano correctamente.
         {
             elf.Equip(bow);
-            Assert.AreEqual(1, elf.Inventary.Count); 
+            Assert.AreEqual(1, elf.Inventary.Count);
+        }
+
+        [Test]
+        public void VictoryPointsCheck()
+        // Se verifica que se añadan los victory points correctamente luego de asesinar a un enemigo.
+        {   
+            //Act
+            elf.Equip(axe);
+            elf.Equip(axe);
+            elf.Equip(sword);
+            elf.Equip(warhammer);
+            elf.Attack(orc);
+
+            //Assert
+            Assert.AreEqual(2,elf.obtainedVP);
+        }
+
+        [Test]
+        public void EnoughVictoryPointsToHealCheck()
+        // Se verifica que el heroe se cure cuando llegue a los 5 puntos de victoria.
+        {   
+            //Act
+            elf.Equip(axe);
+            elf.Equip(axe);
+            elf.Equip(sword);
+
+            orc.Attack(dwarf);
+
+            elf.Attack(orc);
+            orc.Respawn();
+
+            elf.Attack(orc);
+            orc.Respawn();
+
+            elf.Attack(orc);
+            orc.Respawn();
+
+            //Assert
+            Assert.AreEqual(100,elf.Health);
         }
     }
 }

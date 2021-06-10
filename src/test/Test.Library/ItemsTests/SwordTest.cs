@@ -17,7 +17,7 @@ namespace Test.Library
         [Test]
         public void SwordCorrectlyInstanced()
         //Se prueba que la espada se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(sword);
         }
@@ -25,11 +25,11 @@ namespace Test.Library
         [Test]
         public void AttackValueCheck()
         //Se prueba que el valor del ataque de la espada sea el esperado.
-        {   
+        {
             int expectedAttackValue = 50;
 
             //Assert
-            Assert.AreEqual(expectedAttackValue,sword.Damage);
+            Assert.AreEqual(expectedAttackValue, sword.Damage);
         }
 
         [Test]

@@ -7,7 +7,7 @@ namespace RoleplayGame
 
     public abstract class Hero : Character
     {
-        public int obtainedVP{get; protected set;}
+        public int obtainedVP { get; protected set; }
         public abstract void Attack(Enemy character);
 
         public void HealCharacter(Hero character)

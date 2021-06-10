@@ -25,7 +25,7 @@ namespace Test.Library
 
             axe = new Axe("Hacha", 50, "Corte Rapaz");
             warhammer = new Warhammer("Martillo de Guerra", 60, "Martillazo");
-            dwarf = new Dwarf("Wagner", 35,"Apoyo"); 
+            dwarf = new Dwarf("Wagner", 35, "Apoyo");
 
             steelClaws = new SteelClaws("Garras de juicio", 50, "Corte devastador");
             dragonArmor = new DragonArmor("Armadura alada", 70, "Blindaje total");
@@ -35,15 +35,15 @@ namespace Test.Library
         [Test]
         public void NameAndRoleCannotBeNull()
         //Se prueba que el nombre y el rol del orco que no sea nulo
-        {   
+        {
             //Assert
-            Assert.IsTrue(orc.Name!=null && orc.Role!=null);
+            Assert.IsTrue(orc.Name != null && orc.Role != null);
         }
 
         [Test]
         public void OrcCorrectlyInstanced()
         //Se prueba que orco se instanció correctamente.
-        {   
+        {
             //Assert
             Assert.IsNotNull(orc);
         }
@@ -51,10 +51,10 @@ namespace Test.Library
         [Test]
         public void AttachAttackItemCheck()
         //Se prueba que la espada se agrega al inventario del orco.
-        {   
+        {
             //Act
             orc.Equip(sword);
-            
+
             //Assert
             Assert.IsNotNull(orc.Inventary);
         }
@@ -62,19 +62,19 @@ namespace Test.Library
         [Test]
         public void AttachDefensiveItemCheck()
         //Se prueba que el escudo se attach al orco.
-        {   
+        {
             //Act
             orc.Equip(shield);
             int index = orc.Inventary.IndexOf(shield);
 
             //Assert
-            Assert.AreEqual(0,index);
+            Assert.AreEqual(0, index);
         }
 
         [Test]
         public void RemoveItemCheck()
         //Se prueba que la espada se remueva del orco.
-        {   
+        {
             //Act
             orc.Equip(sword);
             orc.UnEquip(sword);
@@ -87,7 +87,7 @@ namespace Test.Library
         [Test]
         public void TotalDamageCheck()
         //Se prueba que el valor total del damage del orco sea el esperado.
-        {   
+        {
             //Act
             orc.Equip(sword);
             int expectedTotalDamage = 75;
@@ -115,7 +115,7 @@ namespace Test.Library
         [Test]
         public void AtackCheckHealthEnemy()
         //Se prueba que el valor total de la vida del enemigo sea el esperado despues de recibir un ataque por el orco.
-        {  
+        {
             //Act
             dwarf.Respawn();
             int expectedHealthLeftEnemy = 25;
@@ -126,25 +126,25 @@ namespace Test.Library
             orc.Attack(dwarf);
 
             //Assert
-            Assert.AreEqual(expectedHealthLeftEnemy,dwarf.Health);
-        } 
+            Assert.AreEqual(expectedHealthLeftEnemy, dwarf.Health);
+        }
 
         [Test]
         public void ReceiveAttackCheck()
         //Se prueba que el valor total de la vida (con su protección) orco sea el esperado despues de recibir un dañp ataque en especifico.
-        {   
+        {
             //Act
             int expectedOrcHealth = 120;
             orc.Equip(shield);
             orc.RecieveAttack(110);
-        
+
             //Assert
-            Assert.AreEqual(expectedOrcHealth,orc.Health);
+            Assert.AreEqual(expectedOrcHealth, orc.Health);
         }
 
         [Test]
         public void HealDragonCheck()
-        // Se comprueba que el el método para curar a un mago del enano funcione correctamente. //
+        // Se comprueba que el el método para curar a un dragon del orc funcione correctamente. //
         {
             //Act
             dwarf.Equip(warhammer);
@@ -153,7 +153,7 @@ namespace Test.Library
             orc.HealCharacter(dragon);
             int newHealth = dragon.Health;
             //Assert
-            Assert.AreEqual(400, newHealth);
+            Assert.AreEqual(200, newHealth);
         }
 
         [Test]
@@ -161,7 +161,7 @@ namespace Test.Library
         // Se verifica que se añadan items al inventario del orco correctamente.
         {
             orc.Equip(axe);
-            Assert.AreEqual(1, orc.Inventary.Count); 
+            Assert.AreEqual(1, orc.Inventary.Count);
         }
     }
 }

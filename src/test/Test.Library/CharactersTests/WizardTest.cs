@@ -24,14 +24,14 @@ namespace Test.Library
             magicStaff = new MagicStaff("Varita", 10, "Hace hechizos");
             spellBook = new SpellBook("Libro", "Tiene hechizos");
             spell = new FireSpell("Wingardium Leviosa", "Hace levitar objetos", 10, 10);
-            wizard = new Wizard("Hermione", "Mago",spellBook);
-            
-            shield = new Shield ("GoldenShield", 30,"Escudo Protector");
-            sword = new Sword ("Katana", 50, "Corte Fugaz");
-            orc = new Orc ("Grom", 10, "Tanque");
+            wizard = new Wizard("Hermione", "Mago", spellBook);
+
+            shield = new Shield("GoldenShield", 30, "Escudo Protector");
+            sword = new Sword("Katana", 50, "Corte Fugaz");
+            orc = new Orc("Grom", 10, "Tanque");
             orc.Equip(shield);
             orc.Equip(sword);
-             
+
         }
 
         [Test]
@@ -91,7 +91,7 @@ namespace Test.Library
             //Assert
             Assert.AreEqual(190, orc.Health);
 
-        } 
+        }
 
         [Test]
         public void ReceiveAttackTest()
@@ -102,7 +102,7 @@ namespace Test.Library
             wizard.RecieveAttack(50);
             //Assert
             Assert.AreEqual(60, wizard.Health);
-        } 
+        }
 
 
         [Test]
@@ -174,7 +174,50 @@ namespace Test.Library
             wizard.Equip(sword);
             //Assert
             Assert.AreEqual(2, wizard.Inventary.Count);
-        } 
+        }
 
+        [Test]
+        public void VictoryPointsCheck()
+        // Se verifica que se añadan los victory points correctamente luego de asesinar a un enemigo.
+        {   
+            //Act
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+
+            wizard.Attack(orc);
+
+            //Assert
+            Assert.AreEqual(2,wizard.obtainedVP);
+        }
+
+        [Test]
+        public void EnoughVictoryPointsToHealCheck()
+        // Se verifica que el heroe se cure cuando llegue a los 5 puntos de victoria.
+        {   
+            //Act
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+            wizard.Equip(sword);
+
+            orc.Attack(wizard);
+
+            wizard.Attack(orc);
+            orc.Respawn();
+
+            wizard.Attack(orc);
+            orc.Respawn();
+
+            wizard.Attack(orc);
+            orc.Respawn();
+
+            //Assert
+            Assert.AreEqual(100,wizard.Health);
+        }
     }
 }

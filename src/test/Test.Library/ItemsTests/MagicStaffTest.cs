@@ -12,9 +12,9 @@ namespace Test.Library
         [SetUp]
         public void SetUp()
         {
-            
+
             magicStaff = new MagicStaff("Accio", 10, "Atrae un objeto");
-            
+
         }
 
 

@@ -23,7 +23,7 @@ namespace RoleplayGame
             this.Role = role;
             this.Inventary = new List<IItem>();
             this.vP = 2;
-         
+
         }
 
     }

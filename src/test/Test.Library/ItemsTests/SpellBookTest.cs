@@ -49,7 +49,7 @@ namespace Test.Library
         public void SpellBookMustStartEmpty()
         //Se prueba que el libro de hechizos se instancie inicialmente sin contener hechizos
         {
-            Assert.AreEqual(0,spellBook.spells.Count);
+            Assert.AreEqual(0, spellBook.spells.Count);
         }
 
         [Test]
